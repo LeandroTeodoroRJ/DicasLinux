@@ -1,0 +1,18 @@
+**************************************************************************
+		AGENDAMENTO DE TAREFAS NO CRONTAB
+**************************************************************************
+
+1. AGENDAMENTOS DE TAREFAS REPETITIVAS
+
+crontab -e	Edita tabela de tarefas do usuário.
+
+crontab -l	Lista tarefa já agendada do usuário.
+
+Tabela crontab:
+<Minuto> <Hora> <Dia> <Mês> <Dia da Semana> <Comando> 
+
+OBS: Quando ocorre o caractere coringa representa que a tarefa poderá ser 
+realizada a qualquer dia, hora, mês, etc...
+
+
+
