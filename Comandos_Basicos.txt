@@ -168,6 +168,16 @@ tar tf <nome_do_arquivo.tar>
 tar xf <nome_do_arquivo.tar>
 tar xzf <nome_do_arquivo.tgz ou tar.gz>
 Obs: Opção "v" para mostrar o processo
+
+Comando zip:
+zip <nome_no_arquivo> <arquivos>	Compacta os arquivos
+	$zip Aquivo_Comp *		Compacta todos os arquivos da pasta
+zipinfo <nome_no_arquivo.zip>		Vê o conteúdo do arquivo zip
+unzip -l <nome_no_arquivo.zip>		Vê o conteúdo do arquivo zip
+zip <nome_no_arquivo> -d <arquivos>	Deleta os arquivos contidos dentro do zip
+zip <nome_no_arquivo> -r <caminho da pasta>	Compacta uma pasta
+unzip <nome_no_arquivo.zip>		Descompacta o arquivo .zip
+
 ********************************************************************************************
 CONTROLE DE PROCESSOS
 $ps  [opções] 	Mostra os processos
