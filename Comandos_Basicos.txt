@@ -223,6 +223,7 @@ $dpkg -b <nome da pasta>      Compila o pacote em .deb
 Instala um pacote baixado ".deb" e resolve as dependências caso ocorram
 $sudo dpkg -i <caminho ou nome do arquivo .deb>
 $sudo apt-get install -f	Para resolver as dependências -f(fix)
+$sudo apt-get install -y	Instala sem perguntar
 
 Muda o gerenciador de seção (tela de login)
 $sudo dpkg-reconfigure <gerenciador de seção atual>	
