@@ -45,6 +45,10 @@ set regexp		Ativa o Regex por padrão na busca
 set smooth		Rolagem lenta (linha por linha)
 set tabsize <número>	Configura o número de espaçamentos para tecla TAB
 
+************************************************************
+			REFERÊNCIAS
+************************************************************
+[1] https://linuxhint.com/configure_nano_text_editor_nanorc/
 
 ************************************************************
 ************** Agradecimentos: SlackJeff *******************
