@@ -1,0 +1,53 @@
+************************************************************
+		EDITOR DE TEXTO NANO
+************************************************************
+Ver a versão:
+$nano --version
+ GNU nano, versão 2.9.3
+ (C) 1999-2011, 2013-2018 Free Software Foundation, Inc.
+ (C) 2014-2018 os contribuidores do nano
+ Email: nano@nano-editor.org	Web: https://nano-editor.org/
+ Opções compiladas: --disable-libmagic --disable-wrapping-as-root --enable-utf8
+
+$nano <nome do arquivo>		Abre o nano com o arquivo indicado
+
+ATALHOS:
+^		Tecla Control
+M		Tecla Alt
+CTRL + O	Salvar arquivo (Salvar como...)
+CRTL + s	Salvar
+CTRL + C	Cancela (Escape)
+CTRL + X	Sair
+CRTL + R	Abrir um arquivo 
+		2 x TAB apresenta todos os arquivos do diretório
+		ALT + F para abrir em um novo buffer
+ALT + >		Alterna entre o s buffres (Arquivos abertos)
+ALT + <
+ALT + A		Marcar o texto(selecionar) - opcional
+ALT + 6		Copiar
+CRTL + U	Colar
+CRTL + K	Recortar
+CRTL + w	Procurar
+		CRTL + R para substituir
+		ALT + C liga/desliga case sensitive
+ALT + x		Desabilita/Habilita legenda inferior
+
+************************************************************
+	    OPÇÕES DO ARQUIVO DE CONFIGURAÇÃO
+************************************************************
+/etc/nanorc	Arquivo de configurações globais
+~/.nanorc	Arquivo de configuração local (do usuário)
+		Caso não exista, criar.
+
+set linenumbers		Ativa a numeração de linhas
+set multibuffer		Por padrão abre o arquivo em um novo buffer (nova "tela")
+set regexp		Ativa o Regex por padrão na busca
+set smooth		Rolagem lenta (linha por linha)
+set tabsize <número>	Configura o número de espaçamentos para tecla TAB
+
+
+************************************************************
+************** Agradecimentos: SlackJeff *******************
+
+
+
