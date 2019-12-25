@@ -50,6 +50,10 @@ $rm -rf	<nome da pasta ou arquivo> 	Remove uma pasta ou arquivo
     -i					Pergunta antes de remover
 $rmdir <nome do diretório>	Remove somente diretórios vazios
 $cp <origem> <destino>	Executa uma cópia de um arquivo
+
+$scp <arquivo> <usuário_destino>@<IP destino>:<caminho destino> 
+			Transfere arquivo via ssh.			
+
 $mv arq1.txt arq2.txt	Cria uma cópia de arq1.txt como arq2.txt no mesmo diretório
     -r			Para cópia de diretírios.
 
