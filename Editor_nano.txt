@@ -9,7 +9,10 @@ $nano --version
  Email: nano@nano-editor.org	Web: https://nano-editor.org/
  Opções compiladas: --disable-libmagic --disable-wrapping-as-root --enable-utf8
 
-$nano <nome do arquivo>		Abre o nano com o arquivo indicado
+$nano <opções> <nome do arquivo>		Abre o nano com o arquivo indicado
+	<opções>
+	-m	Ativa o suporte para o mouse
+	-c	Ativa o constantshow (rodapé de linha e coluna)
 
 ATALHOS:
 ^		Tecla Control
