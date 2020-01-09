@@ -328,6 +328,7 @@ $git commit -m "<comentário>"	Adiciona o comentário da atualização
 $git push			Sobe os arquivos para o GitHub
 $git pull			Atualiza o repositório local com a versão mais nova
 				do repositório no git
+$git rm <nome do arquivo>	Remove o arquivo do repositório
 ********************************************************************************************
 
 
