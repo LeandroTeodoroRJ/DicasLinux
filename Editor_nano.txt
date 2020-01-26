@@ -47,6 +47,8 @@ set multibuffer		Por padrão abre o arquivo em um novo buffer (nova "tela")
 set regexp		Ativa o Regex por padrão na busca
 set smooth		Rolagem lenta (linha por linha)
 set tabsize <número>	Configura o número de espaçamentos para tecla TAB
+set zap			Apaga o bloco selecionado quando precionado Del ou 
+			BackSpace
 
 ************************************************************
 			REFERÊNCIAS
