@@ -1,260 +1,260 @@
 **********************************************************************
-INTRODU«√O 
+INTRODU√á√ÉO 
 1.Atalhos para o terminal shell: Crtl+Alt+T
 2.Atalho para troca entre os terminais do Linux: Crtl+Alt+ (F1 ao F7) onde
-o F7 È a interface gr·fica e F1 ao F6 os terminais do shell. 
+o F7 √© a interface gr√°fica e F1 ao F6 os terminais do shell. 
 3.Ctrl+C aborta o comando atual na linha
-4.No Shell a formataÁ„o È <nome usu·rio>@<nome m·quina>:<diretÛrio atual>$
-5.O caractere "~" representa o diretÛrio Home do usu·rio
-6.A tecla "TAB" È o autocomplete
+4.No Shell a formata√ß√£o √© <nome usu√°rio>@<nome m√°quina>:<diret√≥rio atual>$
+5.O caractere "~" representa o diret√≥rio Home do usu√°rio
+6.A tecla "TAB" √© o autocomplete
 7.Para comandos sequenciais usar ";" Ex.$clear; date
 
 $man <comando>	help dos comandos (manual do comando)
 $clear		Limpa a tela
 
 ********************************************************************
-COMANDOS DE MANUPULA«√O INTERNA DE ARQUIVOS
-$cat <arquivo texto>	Mostra o conte˙do do arquivo de texto
-$grep "<string>" *txt	Procura em todos os arquivos txt no diretÛrio atual
-			a ocorrÍncia da string
-	-v <string>	Mostra tudo, menos a string (lÛgica invertida)
+COMANDOS DE MANUPULA√á√ÉO INTERNA DE ARQUIVOS
+$cat <arquivo texto>	Mostra o conte√∫do do arquivo de texto
+$grep "<string>" *txt	Procura em todos os arquivos txt no diret√≥rio atual
+			a ocorr√™ncia da string
+	-v <string>	Mostra tudo, menos a string (l√≥gica invertida)
 $cut		Vide cut.txt
 		
-$sed		Deleta linhas da saÌda padr„o (ShellScript Aula9)
+$sed		Deleta linhas da sa√≠da padr√£o (ShellScript Aula9)
 $diff <arquivo1> <arquivo2> Compara os dois arquivos e exibe mensagem se houver 
-		diferenÁa entre eles.
-	$diff -r <diretÛrio1> <diretÛrio2> Para comparaÁ„o de diretÛrios
+		diferen√ßa entre eles.
+	$diff -r <diret√≥rio1> <diret√≥rio2> Para compara√ß√£o de diret√≥rios
 
 
 ********************************************************************************* 
 COMANDOS DE DISCO 
 $ls		Mostra os arquivos e pastas
-$ls -l		Mostra o conte˙do na formda de lista
+$ls -l		Mostra o conte√∫do na formda de lista
 $ls -h		Mostra o tamanho dos aquivos em Kb, Mb ou Gb
 $ls -a		Mostra os arquivos ocultos
 $ls -lah	Mostra com detalhes e os arquivos ocultos
 $ls -lah | more		Idem dir/p
 $ls -lah > /home/leandro/lista.txt	grava a listagem em um arquivo txt
-$find <diretÛrio> <nome do arquivo ou diretÛrio> Procura no disco
-	$find <diretÛrio> -name <nome do arquivo> Procura arquivo no disco
+$find <diret√≥rio> <nome do arquivo ou diret√≥rio> Procura no disco
+	$find <diret√≥rio> -name <nome do arquivo> Procura arquivo no disco
 	$find <sintaxe do find> -exec <comando> {} \; Executa um comando 
 					para cada linha encontrada no find
 $cd <pasta>	Entra em uma pasta
-$pwd		Mostra o caminho da pasta onde vocÍ est· (ditetÛrio atual)
-$cd ..		Sai da pasta (notar o espaÁo entre cd e ..)
-$cd -		Retorna ao diretÛrio anterior
+$pwd		Mostra o caminho da pasta onde voc√™ est√° (ditet√≥rio atual)
+$cd ..		Sai da pasta (notar o espa√ßo entre cd e ..)
+$cd -		Retorna ao diret√≥rio anterior
 $mkdir <pasta>	Cria uma pasta no local atual
-	$mkdir "Pasta teste"	Para n„o criar duas pastas (Pasta e teste)
-	$mkdir -p ~/Rock/Classico	Cria uma ·rvore de diretÛrios
+	$mkdir "Pasta teste"	Para n√£o criar duas pastas (Pasta e teste)
+	$mkdir -p ~/Rock/Classico	Cria uma √°rvore de diret√≥rios
 $rm -rf	<nome da pasta ou arquivo> 	Remove uma pasta ou arquivo
     -i					Pergunta antes de remover
-$rmdir <nome do diretÛrio>	Remove somente diretÛrios vazios
-$cp <origem> <destino>	Executa uma cÛpia de um arquivo
+$rmdir <nome do diret√≥rio>	Remove somente diret√≥rios vazios
+$cp <origem> <destino>	Executa uma c√≥pia de um arquivo
 
-$scp <arquivo> <usu·rio_destino>@<IP destino>:<caminho destino> 
+$scp <arquivo> <usu√°rio_destino>@<IP destino>:<caminho destino> 
 			Transfere arquivo via ssh.			
 
-$mv arq1.txt arq2.txt	Cria uma cÛpia de arq1.txt como arq2.txt no mesmo diretÛrio
-    -r			Para cÛpia de diretÌrios.
+$mv arq1.txt arq2.txt	Cria uma c√≥pia de arq1.txt como arq2.txt no mesmo diret√≥rio
+    -r			Para c√≥pia de diret√≠rios.
 
-$mv <origem> <destino>	Move de um arquivo ou diretÛrio
+$mv <origem> <destino>	Move de um arquivo ou diret√≥rio
 $mv arq1.txt arq2.txt	Renomeia arq1.txt para arq2.txt 
-$scp <origem> <usu·rio>@<IP>:<destino>	Executa uma cÛpia de um arquivo na rede
-					habilitar o serviÁo ssh antes
+$scp <origem> <usu√°rio>@<IP>:<destino>	Executa uma c√≥pia de um arquivo na rede
+					habilitar o servi√ßo ssh antes
 	$scp teste.txt root@192.168.1.100:/home/Leandro
-$whereis <comando>	Informa o diretÛrio de localizaÁ„o do comando
+$whereis <comando>	Informa o diret√≥rio de localiza√ß√£o do comando
 
-$ln -s <target file/directory> <Symbolic filename>	Cria um link simbÛlico
-$ln -nsf <target file/directory> <Symbolic filename>	Edita um link simbÛlico j· existente
+$ln -s <target file/directory> <Symbolic filename>	Cria um link simb√≥lico
+$ln -nsf <target file/directory> <Symbolic filename>	Edita um link simb√≥lico j√° existente
 
 *********************************************************************
 COMANDOS DE HARDWARE
-$lsusb		Lista os perifÈricos conectados a porta usb
+$lsusb		Lista os perif√©ricos conectados a porta usb
 
 
 
-$fdisk -l	Para mostrar as tabelas de formataÁ„o do disco
-$mkfs.<tipo> <caminho>	Para escolher o padr„o de alocaÁ„o de dados
+$fdisk -l	Para mostrar as tabelas de formata√ß√£o do disco
+$mkfs.<tipo> <caminho>	Para escolher o padr√£o de aloca√ß√£o de dados
 	<tipo> = ntfs, xfs, ext4, etc...
 	$mkfs.ext4 dev/sdb1
-$df -h	Retorna lista dos dispositivos e partiÁıes montadas
-$mount	Retorna informaÁ„o dos sistemas de arquivos montados	
+$df -h	Retorna lista dos dispositivos e parti√ß√µes montadas, assim como espa√ßo utilizado e dispon√≠vel.
+$mount	Retorna informa√ß√£o dos sistemas de arquivos montados	
 $mount -t <tipo> <caminho do dispositivo> <caminho para montagem>
-Executa a montagem do dispositivo ou partiÁ„o
+Executa a montagem do dispositivo ou parti√ß√£o
 	$mount -t ext4 dev/sdb1 mnt/hd_01
 
-$lprm -		Esse È o comando mais conhecido e que limpa a fila de impress„o de uma vez sÛ, sem 			lhe dar opÁ„o de escolher o que deletar.
-$lpq -a		Serve para mostrar os trabalhos em todas as filas de impress„o do sistema.
-$lpstat -p -d	Mostra os nomes das impressoras e a impressora padr„o (ativa)
-$lp <opÁıes> <entrada> 	Imprime na impressora padr„o. O campo entrada pode ser um arquivo ou a saÌda de 
+$lprm -		Esse √© o comando mais conhecido e que limpa a fila de impress√£o de uma vez s√≥, sem 			lhe dar op√ß√£o de escolher o que deletar.
+$lpq -a		Serve para mostrar os trabalhos em todas as filas de impress√£o do sistema.
+$lpstat -p -d	Mostra os nomes das impressoras e a impressora padr√£o (ativa)
+$lp <op√ß√µes> <entrada> 	Imprime na impressora padr√£o. O campo entrada pode ser um arquivo ou a sa√≠da de 
 			outro comando com o concatenador "|"
-		<opÁıes>:
-		-n 2	Imprime duas cÛpias
-		-P 1,3	Imprime p·gina 1 e 3
+		<op√ß√µes>:
+		-n 2	Imprime duas c√≥pias
+		-P 1,3	Imprime p√°gina 1 e 3
 		-d <nome da impressora>	Imprime em outra impressora
 			
 ************************************* ARQUIVO FSTAB ***********************************************
 OBS.: 	Editar o arquivo etc/fstab e inserir as linhas para montagem
-	autom·tica quando o Sist. Op. È iniciado, conforme abaixo:
-<caminho do dispositivo> <ponto de montagem> <tipo> <opÁ„o> <par‚metros de verificaÁ„o integridade>
+	autom√°tica quando o Sist. Op. √© iniciado, conforme abaixo:
+<caminho do dispositivo> <ponto de montagem> <tipo> <op√ß√£o> <par√¢metros de verifica√ß√£o integridade>
 /dev/sdb1	/mnt/hd_01	ext4	defauts		0	0
 
-1) O caminho do dispositivo pode ser substituÌdo por seu ID utilizando o comando
-blkid. O blkid gera um cÛdigo ˙nico para cada dispositivo (serial number), assim, 
-o dispositivo ser· montado na mesma pasta mesmo que seja conectado em outra porta 
-da placa m„e.
+1) O caminho do dispositivo pode ser substitu√≠do por seu ID utilizando o comando
+blkid. O blkid gera um c√≥digo √∫nico para cada dispositivo (serial number), assim, 
+o dispositivo ser√° montado na mesma pasta mesmo que seja conectado em outra porta 
+da placa m√£e.
 #blkid <caminho do dispositivo>
 
-2) <opÁ„o>
-defaults - padr„o
-noexec - n„o d· permiss„o de execuÁ„o de programas
-noatime - desabilita opÁ„o de atualizaÁ„o de data e hora de modificaÁ„o do arquivo
-… possivel concatenar separando por vÌrgula: noexec,noatime
+2) <op√ß√£o>
+defaults - padr√£o
+noexec - n√£o d√° permiss√£o de execu√ß√£o de programas
+noatime - desabilita op√ß√£o de atualiza√ß√£o de data e hora de modifica√ß√£o do arquivo
+√â possivel concatenar separando por v√≠rgula: noexec,noatime
 
-3) <par‚metros de verificaÁ„o integridade>
+3) <par√¢metros de verifica√ß√£o integridade>
 Primeira coluna:
 0 - backup desabilitado
 1 - backup habilitado
 
 Segunda coluna:
-0 - verificaÁ„o de integridade desabilitada
-2 - verificaÁ„o no boot
+0 - verifica√ß√£o de integridade desabilitada
+2 - verifica√ß√£o no boot
 ***************************************************************************************************
 
 $unmount <ponto de montagem>	Desmonta o disposito montado
 	$unmount mnt/hd_01
-$fsck.<tipo> <caminho do dispositivo>	Para verificaÁ„o da unidade (antes È 
-					necess·rio a desmontagem)
+$fsck.<tipo> <caminho do dispositivo>	Para verifica√ß√£o da unidade (antes √© 
+					necess√°rio a desmontagem)
 	$fsck.ext4 /dev/sdb1
 $crontab	Agendador de tarefas
 
 ********************************************************************************************
 COMANDOS COMPLEMENTARES
 |more	Usado para paginar as telas de resultados
-|less	Usado para paginar as telas de resultados com mais opÁıes de navegaÁ„o
+|less	Usado para paginar as telas de resultados com mais op√ß√µes de navega√ß√£o
    /    Faz uma busca de cima para baixo
    ?    Faz uma busca de baixo para cima
-   n    PrÛxima ocorrÍncia da busca
-   N    OcorrÍncia anterior da busca
+   n    Pr√≥xima ocorr√™ncia da busca
+   N    Ocorr√™ncia anterior da busca
    q    Sair
 --help	Ajuda do comando.
 $<nome do processo>&	Executa o processo em background
 *******************************************************************************************
-REDIRECIONAMENTO DE SAÕDA
->	Para redirecionar a saÌda de um comando para um arquivo (Sobrescreve se existir)
->>	Para redirecionar a saÌda de um comando para um arquivo (Se existir adiciona
+REDIRECIONAMENTO DE SA√çDA
+>	Para redirecionar a sa√≠da de um comando para um arquivo (Sobrescreve se existir)
+>>	Para redirecionar a sa√≠da de um comando para um arquivo (Se existir adiciona
 	as linhas ao final)
-2> ou 2>>  Faz a mesma coisa acima, porÈm direciona a saÌda de erro
-<comando>|tee -a log.out	Redireciona a saÌda padr„o para o arquivo log.out adicionando
-				uma nova linha apÛs cada execuÁ„o (-a) e ainda mostra
+2> ou 2>>  Faz a mesma coisa acima, por√©m direciona a sa√≠da de erro
+<comando>|tee -a log.out	Redireciona a sa√≠da padr√£o para o arquivo log.out adicionando
+				uma nova linha ap√≥s cada execu√ß√£o (-a) e ainda mostra
 				o resultado do comando na tela			
 
 ********************************************************************************************
-VARI¡VEIS DE AMBIMENTE
-$env		Mostra as vari·veis da seÁ„o atual e de ambiente
-$set		Mostra todas as vari·veis (local e exportadas)
+VARI√ÅVEIS DE AMBIMENTE
+$env		Mostra as vari√°veis da se√ß√£o atual e de ambiente
+$set		Mostra todas as vari√°veis (local e exportadas)
 
-PATH	Informa os diretÛrios onde est„o os programas executados diretamente pelo
-	shell do Linux. Sem a nessecidade de navegaÁ„o atÈ a localizaÁ„o do referido
+PATH	Informa os diret√≥rios onde est√£o os programas executados diretamente pelo
+	shell do Linux. Sem a nessecidade de navega√ß√£o at√© a localiza√ß√£o do referido
 	programa.
-$which <execut·vel>	Procura se o execut·vel est· no path do sistema
-echo $<vari·vel>	Mostra o conte˙do de uma vari·vel de ambiente
+$which <execut√°vel>	Procura se o execut√°vel est√° no path do sistema
+echo $<vari√°vel>	Mostra o conte√∫do de uma vari√°vel de ambiente
 
 ********************************************************************************************
 CARACTERES CORINGA
-*			Substitui uma sequÍncia de caracteres incluindo vazio
-?			Substitui 1 caractere, vazio n„o incluso
-[char]			Substitui um caractere por uma sequÍncia de caracteres que estiverem 
+*			Substitui uma sequ√™ncia de caracteres incluindo vazio
+?			Substitui 1 caractere, vazio n√£o incluso
+[char]			Substitui um caractere por uma sequ√™ncia de caracteres que estiverem 
 			dentro dos colchetes
-[inÌcio-fim]		Substitui um caractere por um intervalo que estiver dentro dos colchetes
-{string,string,...}	Substitui uma sequÍncia de caracteres pelas strings entre chaves.
+[in√≠cio-fim]		Substitui um caractere por um intervalo que estiver dentro dos colchetes
+{string,string,...}	Substitui uma sequ√™ncia de caracteres pelas strings entre chaves.
 ********************************************************************************************
-COMPACTA«√O DE ARQUIVOS
+COMPACTA√á√ÉO DE ARQUIVOS
 Comando tar:
 -Agrupar
 tar cf <nome_do_arquivo.tar> <arquivos>	
-tar czf <nome_do_arquivo.tgz ou tar.gz> <arquivos>  Agrupa j· compactando
+tar czf <nome_do_arquivo.tgz ou tar.gz> <arquivos>  Agrupa j√° compactando
 -Listar os arquivos compactados
 tar tf <nome_do_arquivo.tar>
 -Extrair os arquivos
 tar xf <nome_do_arquivo.tar>
 tar xzf <nome_do_arquivo.tgz ou tar.gz>
-Obs: OpÁ„o "v" para mostrar o processo
+Obs: Op√ß√£o "v" para mostrar o processo
 
 Comando zip:
 zip <nome_no_arquivo> <arquivos>	Compacta os arquivos
 	$zip Aquivo_Comp *		Compacta todos os arquivos da pasta
-zipinfo <nome_no_arquivo.zip>		VÍ o conte˙do do arquivo zip
-unzip -l <nome_no_arquivo.zip>		VÍ o conte˙do do arquivo zip
+zipinfo <nome_no_arquivo.zip>		V√™ o conte√∫do do arquivo zip
+unzip -l <nome_no_arquivo.zip>		V√™ o conte√∫do do arquivo zip
 zip <nome_no_arquivo> -d <arquivos>	Deleta os arquivos contidos dentro do zip
 zip <nome_no_arquivo> -r <caminho da pasta>	Compacta uma pasta
 unzip <nome_no_arquivo.zip>		Descompacta o arquivo .zip
 
 ********************************************************************************************
 CONTROLE DE PROCESSOS
-$ps  [opÁıes] 	Mostra os processos
-	u	Mostra 	o usu·rio e consumo da CPU por processo
-	x	Mostra todos os processos do usu·rio (incluindo  da interface gr·fica)
-	a	Mostra os processos de todos os usu·rios
+$ps  [op√ß√µes] 	Mostra os processos
+	u	Mostra 	o usu√°rio e consumo da CPU por processo
+	x	Mostra todos os processos do usu√°rio (incluindo  da interface gr√°fica)
+	a	Mostra os processos de todos os usu√°rios
 
 $pgrep <nome do processo>     Retorna o(s) PID(s) do processo
 $kill -l		      Lista o nome dos sinais
-$kill <PID do processo>	      Encerra um processo com a permiss„o do mesmo
+$kill <PID do processo>	      Encerra um processo com a permiss√£o do mesmo
 $kill -9 <PID do processo>    Encerra um processo de forma abrupta
-$pkill <nome do processo>     Encerra um processo com a permiss„o do mesmo
+$pkill <nome do processo>     Encerra um processo com a permiss√£o do mesmo
 $pkill -9 <nome do processo>  Encerra um processo de forma abrupta
 
-$jobs		Lista os processos parados pelo usu·rio (para parar um processo
+$jobs		Lista os processos parados pelo usu√°rio (para parar um processo
 		usa-se CTRL^Z)
 
-$fg <n˙mero do processo parado>		Retoma um processo parado, o n˙mero do
-					processo È retornado com o comando jobs.
+$fg <n√∫mero do processo parado>		Retoma um processo parado, o n√∫mero do
+					processo √© retornado com o comando jobs.
 
-GERENCIAMENTO DE SERVI«OS (Servidor de e-mail, html, etc... )
-$systemctl status <nome do serviÁo>
-$systemctl stop <nome do serviÁo>
-$systemctl start <nome do serviÁo>
-$systemctl restart <nome do serviÁo>
+GERENCIAMENTO DE SERVI√áOS (Servidor de e-mail, html, etc... )
+$systemctl status <nome do servi√ßo>
+$systemctl stop <nome do servi√ßo>
+$systemctl start <nome do servi√ßo>
+$systemctl restart <nome do servi√ßo>
 ********************************************************************************************
 GERENCIAMENTO DO SISTEMA
-$uname -p	Mostra o processador da m·quina
+$uname -p	Mostra o processador da m√°quina
 $reboot		Reinicia o computador
 $poweroff	Desliga o sistema operacional
 $shutdown <hora>	Desliga o sistema operacional na hora indicada
 
 ********************************************************************************************
 GERENCIAMENTO DE PACOTES
-Padr„o Debian
+Padr√£o Debian
 $dpkg -l	Lista os pacotes instalados
-$dpkg -l <nome do pacote> Lista se o pacote est· instalado
+$dpkg -l <nome do pacote> Lista se o pacote est√° instalado
 $dpkg -i <nome_do_pacote.deb> Instala um pacote baixado
 $dpkg -P <nome_do_pacote.deb> Remove completamente o pacote instalado
-      -s		      Remove mas mantÈm arquivos de configuraÁ„o
+      -s		      Remove mas mant√©m arquivos de configura√ß√£o
 $dpkg -b <nome da pasta>      Compila o pacote em .deb
 
-Instala um pacote baixado ".deb" e resolve as dependÍncias caso ocorram
+Instala um pacote baixado ".deb" e resolve as depend√™ncias caso ocorram
 $sudo dpkg -i <caminho ou nome do arquivo .deb>
-$sudo apt-get install -f	Para resolver as dependÍncias -f(fix)
+$sudo apt-get install -f	Para resolver as depend√™ncias -f(fix)
 $sudo apt-get install -y	Instala sem perguntar
 
-Muda o gerenciador de seÁ„o (tela de login)
-$sudo dpkg-reconfigure <gerenciador de seÁ„o atual>	
-   OBS: Para saber o gerenciador de seÁ„o atual veja o conte˙do do
+Muda o gerenciador de se√ß√£o (tela de login)
+$sudo dpkg-reconfigure <gerenciador de se√ß√£o atual>	
+   OBS: Para saber o gerenciador de se√ß√£o atual veja o conte√∫do do
 	arquivo /etc/X11/default-display-manager
 	Ex: $cat /etc/X11/default-display-manager
 	    /usr/sbin/gdm3
-	O gerenciador atual È o gdm3.	
+	O gerenciador atual √© o gdm3.	
 		
 
-$apt-get update		Atualiza a lista de reposiÛrios do apt-get
+$apt-get update		Atualiza a lista de reposi√≥rios do apt-get
 $apt-get upgrade	Atualiza todos os pacotes instalados	
-$apt-get upgrade <nome da aplicaÁ„o>	Atualiza o pacote informado
-$apt-get remove <nome da aplicaÁ„o>	Remove a aplicaÁ„o
+$apt-get upgrade <nome da aplica√ß√£o>	Atualiza o pacote informado
+$apt-get remove <nome da aplica√ß√£o>	Remove a aplica√ß√£o
 
-Padr„o Red Hat
+Padr√£o Red Hat
 $rpm -qa	Lista todos pacotes instalados
-$rpm -qa <nome do pacote> Lista se o pacote est· instalado
-$rpm -qi <nome do pacote> InformaÁıes do pacote indicado (Verifica se o pacote est· instalado)
+$rpm -qa <nome do pacote> Lista se o pacote est√° instalado
+$rpm -qi <nome do pacote> Informa√ß√µes do pacote indicado (Verifica se o pacote est√° instalado)
 $rpm -ivh <nome do pacote> Instala um pacote baixado
 $rpm -evh <nome_do_pacote.deb> Remove completamente o pacote instalado
      -v	  Verbose - Mostra detalhes do andamento
@@ -262,73 +262,73 @@ $rpm -evh <nome_do_pacote.deb> Remove completamente o pacote instalado
 
 yum ou dnf
 $yum update	Atualiza todos os pacotes
-$yum update <nome da aplicaÁ„o>	Atualiza o pacote informado
+$yum update <nome da aplica√ß√£o>	Atualiza o pacote informado
 $yum upgrade	Atualiza todos os pacotes e remove os obsoletos	
-$yum install <nome do pacote> 	Instala o pacote do repositÛrio
+$yum install <nome do pacote> 	Instala o pacote do reposit√≥rio
 $yum remove <nome do pacote> 	Remove o pacote
 ********************************************************************************************
-GERENCIAMENTO DE USU¡RIOS
-$su		Troca para o usu·rio root (digitando a senha do root)(Antes definir a senha do 			root)
-$sudo su 	Troca para o usu·rio root (digitando a do usu·rio atual)(Para Ubunto)
-$whoami		Qual o usu·rio que est· logado?
+GERENCIAMENTO DE USU√ÅRIOS
+$su		Troca para o usu√°rio root (digitando a senha do root)(Antes definir a senha do 			root)
+$sudo su 	Troca para o usu√°rio root (digitando a do usu√°rio atual)(Para Ubunto)
+$whoami		Qual o usu√°rio que est√° logado?
 $useradd -m <nome do usuario>
-$userdel <nome do usuario> 	Remove o usu·rio 
-$userdel -r <nome do usuario> 	Remove o usu·rio e sua pasta home(-r)
-$usermod -c "<string>"  Modifica o coment·rio do usur·rio (etc/passwd)
-$usermod -s /bin/bash <nome usu·rio> Muda o shell padr„o para o bash (bud do Ubuntu)
-$passwd <nome do usuario> Troca a senha do usu·rio (necessita estar como root)
+$userdel <nome do usuario> 	Remove o usu√°rio 
+$userdel -r <nome do usuario> 	Remove o usu√°rio e sua pasta home(-r)
+$usermod -c "<string>"  Modifica o coment√°rio do usur√°rio (etc/passwd)
+$usermod -s /bin/bash <nome usu√°rio> Muda o shell padr√£o para o bash (bud do Ubuntu)
+$passwd <nome do usuario> Troca a senha do usu√°rio (necessita estar como root)
 
-PERMISS’ES DE ACESSO COMANDO CHMOD
-Exemplo de vis„o do comando ls
--rw-r--r-- ricardo ricardo  <informaÁıes> <nome do arquivo>
+PERMISS√ïES DE ACESSO COMANDO CHMOD
+Exemplo de vis√£o do comando ls
+-rw-r--r-- ricardo ricardo  <informa√ß√µes> <nome do arquivo>
 0111222333
 0: - ou l : arquivo comum(-) ou link(l)
 r - read
 w - write
 x - execute
-111: permissıes do usu·rio
-222: permissıes do grupo do usu·rio
-333: permissıes dos demais usu·rios
-Comando $chmod [opÁıes]
-opÁıes:
+111: permiss√µes do usu√°rio
+222: permiss√µes do grupo do usu√°rio
+333: permiss√µes dos demais usu√°rios
+Comando $chmod [op√ß√µes]
+op√ß√µes:
 u - user
 g - group
 o - other (outros)
 a - all
 Exemplo: 
-1.Colocar permiss„o de escrita para o grupo
+1.Colocar permiss√£o de escrita para o grupo
 $chmod g+w <nome do arquivo>
-2.Remover permiss„o de leitura para outros usu·rios
+2.Remover permiss√£o de leitura para outros usu√°rios
 $chmod o-l <nome do arquivo>
 3.Exemplo concatenando
 chmod go-l <nome do arquivo>
 
-chmod em opÁ„o de octal
-0 0 0 -> 0 -> nenhuma permiss„o
-0 0 1 -> 1 -> apenas execuÁ„o
+chmod em op√ß√£o de octal
+0 0 0 -> 0 -> nenhuma permiss√£o
+0 0 1 -> 1 -> apenas execu√ß√£o
 0 1 0 -> 2 -> apenas escrita
-0 1 1 -> 3 -> escrita e execuÁ„o
+0 1 1 -> 3 -> escrita e execu√ß√£o
 1 0 0 -> 4 -> apenas leitura
-1 0 1 -> 5 -> leitura e execuÁ„o
+1 0 1 -> 5 -> leitura e execu√ß√£o
 1 1 0 -> 6 -> leitura e escrita
-1 1 1 -> 7 -> leitura, execuÁ„o e escrita 
+1 1 1 -> 7 -> leitura, execu√ß√£o e escrita 
 Ex. chmod 755 <nome do arquivo/pasta>
 
 
-MUDAN«A DE DONO DO ARQUIVO
-$chown <nome do usu·rio> <nome do arquivo>  Muda o dono do arquivo
-$chown <nome do usu·rio>:<nome do grupo> <nome do arquivo>  Muda o dono e o grupo do arquivo
+MUDAN√áA DE DONO DO ARQUIVO
+$chown <nome do usu√°rio> <nome do arquivo>  Muda o dono do arquivo
+$chown <nome do usu√°rio>:<nome do grupo> <nome do arquivo>  Muda o dono e o grupo do arquivo
 $chown :<nome do grupo> <nome do arquivo>  Muda o grupo dono do arquivo
 
 ********************************************************************************************
 VERSIONADOR GITHUB (GIT)
-$git clone <link do github>	Faz o download do repositÛrio Git
+$git clone <link do github>	Faz o download do reposit√≥rio Git
 $git add . 			Adiciona todos os arquivos alterados
-$git commit -m "<coment·rio>"	Adiciona o coment·rio da atualizaÁ„o
+$git commit -m "<coment√°rio>"	Adiciona o coment√°rio da atualiza√ß√£o
 $git push			Sobe os arquivos para o GitHub
-$git pull			Atualiza o repositÛrio local com a vers„o mais nova
-				do repositÛrio no git
-$git rm <nome do arquivo>	Remove o arquivo do repositÛrio
+$git pull			Atualiza o reposit√≥rio local com a vers√£o mais nova
+				do reposit√≥rio no git
+$git rm <nome do arquivo>	Remove o arquivo do reposit√≥rio
 ********************************************************************************************
 
 
