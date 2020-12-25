@@ -211,7 +211,10 @@ $fg <número do processo parado>		Retoma um processo parado, o número do
 					processo é retornado com o comando jobs.
 
 GERENCIAMENTO DE SERVIÇOS (Servidor de e-mail, html, etc... )
+$systemd-analyze blame			Lista os tempos de inicialização dos Serviços
 $systemctl status <nome do serviço>
+$systemctl disable <nome do serviço>	Retira um serviço da inicialização do sistema
+$systemctl enable <nome do serviço>	Inclui um serviço da inicialização do sistema
 $systemctl stop <nome do serviço>
 $systemctl start <nome do serviço>
 $systemctl restart <nome do serviço>
