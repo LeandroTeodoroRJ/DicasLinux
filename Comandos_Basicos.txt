@@ -225,6 +225,11 @@ $reboot		Reinicia o computador
 $poweroff	Desliga o sistema operacional
 $shutdown <hora>	Desliga o sistema operacional na hora indicada
 
+Alterar o Gerenciador de Seção (Tela de Login)
+$sudo dpkg-reconfigure gdm
+lightdm - XFCE
+gdm - Gnome
+kdm - KDE
 ********************************************************************************************
 GERENCIAMENTO DE PACOTES
 Padrão Debian
@@ -334,21 +339,4 @@ $git pull			Atualiza o repositório local com a versão mais nova
 $git rm <nome do arquivo>	Remove o arquivo do repositório
 ********************************************************************************************
 
-
-	
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-											
+										
