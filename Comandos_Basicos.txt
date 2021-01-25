@@ -54,6 +54,10 @@ $cp <origem> <destino>	Executa uma cópia de um arquivo
 $scp <arquivo> <usuário_destino>@<IP destino>:<caminho destino> 
 			Transfere arquivo via ssh.			
 
+$ssh <usuário>@<IP>     Estabelece uma conexão SSH
+ou
+$ssh <usuário>@<domínio>   
+
 $mv arq1.txt arq2.txt	Cria uma cópia de arq1.txt como arq2.txt no mesmo diretório
     -r			Para cópia de diretírios.
 
