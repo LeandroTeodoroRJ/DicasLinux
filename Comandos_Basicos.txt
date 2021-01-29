@@ -75,8 +75,6 @@ $ln -nsf <target file/directory> <Symbolic filename>	Edita um link simbólico j�
 COMANDOS DE HARDWARE
 $lsusb		Lista os periféricos conectados a porta usb
 
-
-
 $fdisk -l	Para mostrar as tabelas de formatação do disco
 $mkfs.<tipo> <caminho>	Para escolher o padrão de alocação de dados
 	<tipo> = ntfs, xfs, ext4, etc...
@@ -96,7 +94,9 @@ $lp <opções> <entrada> 	Imprime na impressora padrão. O campo entrada pode se
 		-n 2	Imprime duas cópias
 		-P 1,3	Imprime página 1 e 3
 		-d <nome da impressora>	Imprime em outra impressora
-			
+$dmesg | grep tty	Lista placas seriais conectadas podendo exibir mensagem de erro ou
+			funcionamento perfeito.
+
 ************************************* ARQUIVO FSTAB ***********************************************
 OBS.: 	Editar o arquivo etc/fstab e inserir as linhas para montagem
 	automática quando o Sist. Op. é iniciado, conforme abaixo:
