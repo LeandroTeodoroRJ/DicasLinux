@@ -197,9 +197,10 @@ unzip <nome_no_arquivo.zip>		Descompacta o arquivo .zip
 ********************************************************************************************
 CONTROLE DE PROCESSOS
 $ps  [opções] 	Mostra os processos
-	u	Mostra 	o usuário e consumo da CPU por processo
-	x	Mostra todos os processos do usuário (incluindo  da interface gráfica)
-	a	Mostra os processos de todos os usuários
+	-u	Mostra 	o usuário e consumo da CPU por processo
+	-x	Mostra todos os processos do usuário (incluindo  da interface gráfica)
+	-a	Mostra os processos de todos os usuários
+	-ef     Mostra todos os processos incluindo linhas de comando com argumentos
 
 $pgrep <nome do processo>     Retorna o(s) PID(s) do processo
 $kill -l		      Lista o nome dos sinais
