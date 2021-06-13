@@ -18,14 +18,17 @@ $cat <arquivo texto>	Mostra o conteúdo do arquivo de texto
 $grep "<string>" *txt	Procura em todos os arquivos txt no diretório atual
 			a ocorrência da string
 	-v <string>	Mostra tudo, menos a string (lógica invertida)
-$cut		Vide cut.txt
-		
+$cut -d"<caractere delimitador>" -f<número da coluna>  Corta uma coluna
+	$cut -d" " -f2	Corta a segunda coluna com o espaço como delimitador.
+	$cut -d":" -f3,4  Corta a terceira e quarta coluna.		
 $sed		Deleta linhas da saída padrão (ShellScript Aula9)
 $diff <arquivo1> <arquivo2> Compara os dois arquivos e exibe mensagem se houver 
 		diferença entre eles.
 	$diff -r <diretório1> <diretório2> Para comparação de diretórios
-
-
+$<argumentos> | xargs <comando>	Executa o comando a partir de uma lista de
+				argumentos de entrada de forma recursiva.
+	$cat ./deletar.txt | xargs rm -rf	Remove todos os arquivos 
+						contidos em deletar.txt
 ********************************************************************************* 
 COMANDOS DE DISCO 
 $ls		Mostra os arquivos e pastas
