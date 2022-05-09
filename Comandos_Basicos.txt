@@ -16,6 +16,9 @@ $clear		Limpa a tela
 ********************************************************************
 COMANDOS DE MANUPULAÇÃO INTERNA DE ARQUIVOS
 $cat <arquivo texto>	Mostra o conteúdo do arquivo de texto
+$tail -f <arquivo texto>  Mostra as últimas dez linhas do arquivo e 
+			  permanece com o arquivo aberto monitorando.
+			  Muito utilizado em arquivos de logs.
 $grep "<string>" *txt	Procura em todos os arquivos txt no diretório atual
 			a ocorrência da string
 	-v <string>	Mostra tudo, menos a string (lógica invertida)
