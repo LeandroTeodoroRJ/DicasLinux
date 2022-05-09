@@ -8,6 +8,7 @@ o F7 é a interface gráfica e F1 ao F6 os terminais do shell.
 5.O caractere "~" representa o diretório Home do usuário
 6.A tecla "TAB" é o autocomplete
 7.Para comandos sequenciais usar ";" Ex.$clear; date
+8.Crtl+l limpa a tela, equivalente ao comando clear
 
 $man <comando>	help dos comandos (manual do comando)
 $clear		Limpa a tela
