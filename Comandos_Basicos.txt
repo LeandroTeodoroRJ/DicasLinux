@@ -1,17 +1,17 @@
 **********************************************************************
-INTRODUÇÃO 
-1.Atalhos para o terminal shell: Crtl+Alt+T
-2.Atalho para troca entre os terminais do Linux: Crtl+Alt+ (F1 ao F7) onde
+DICAS INICIAIS 
+1. Atalhos para o terminal shell: Crtl+Alt+T
+2. Atalho para troca entre os terminais do Linux: Crtl+Alt+ (F1 ao F7) onde
 o F7 é a interface gráfica e F1 ao F6 os terminais do shell. 
-3.Ctrl+C aborta o comando atual na linha
-4.No Shell a formatação é <nome usuário>@<nome máquina>:<diretório atual>$
-5.O caractere "~" representa o diretório Home do usuário
-6.A tecla "TAB" é o autocomplete
-7.Para comandos sequenciais usar ";" Ex.$clear; date
-8.Crtl+l limpa a tela, equivalente ao comando clear
-
-$man <comando>	help dos comandos (manual do comando)
-$clear		Limpa a tela
+3. Ctrl+C aborta o comando atual na linha
+4. No Shell a formatação é <nome usuário>@<nome máquina>:<diretório atual>$
+5. O caractere "~" representa o diretório Home do usuário
+6. A tecla "TAB" é o autocomplete
+7. Para comandos sequenciais usar ";" Ex.$clear; date
+8. Crtl+l limpa a tela, equivalente ao comando clear
+9. $open .  (Abre o gerenciador de arquivos na pasta atual)
+10. $man <comando>	help dos comandos (manual do comando)
+11. $clear	(Limpa a tela)
 
 ********************************************************************
 COMANDOS DE MANUPULAÇÃO INTERNA DE ARQUIVOS
@@ -29,19 +29,22 @@ $sed		Deleta linhas da saída padrão (ShellScript Aula9)
 $diff <arquivo1> <arquivo2> Compara os dois arquivos e exibe mensagem se houver 
 		diferença entre eles.
 	$diff -r <diretório1> <diretório2> Para comparação de diretórios
-$<argumentos> | xargs <comando>	Executa o comando a partir de uma lista de
-				argumentos de entrada de forma recursiva.
+xargs
+Executa o comando a partir de uma lista de argumentos de entrada de forma recursiva.
+$<argumentos> | xargs <comando>					
 	$cat ./deletar.txt | xargs rm -rf	Remove todos os arquivos 
 						contidos em deletar.txt
+
 ********************************************************************************* 
 COMANDOS DE DISCO 
 $ls		Mostra os arquivos e pastas
-$ls -l		Mostra o conteúdo na formda de lista
+$ls -l		Mostra o conteúdo na forma de lista longa (l=long)
 $ls -h		Mostra o tamanho dos aquivos em Kb, Mb ou Gb
 $ls -a		Mostra os arquivos ocultos
 $ls -lah	Mostra com detalhes e os arquivos ocultos
 $ls -lah | more		Idem dir/p
 $ls -lah > /home/leandro/lista.txt	grava a listagem em um arquivo txt
+$tree -d L 2    Lista a árvore somente de diretórios em 2 níveis
 $find <diretório> <nome do arquivo ou diretório> Procura no disco
 	$find <diretório> -name <nome do arquivo> Procura arquivo no disco
 	$find <sintaxe do find> -exec <comando> {} \; Executa um comando 
@@ -53,10 +56,12 @@ $cd -		Retorna ao diretório anterior
 $mkdir <pasta>	Cria uma pasta no local atual
 	$mkdir "Pasta teste"	Para não criar duas pastas (Pasta e teste)
 	$mkdir -p ~/Rock/Classico	Cria uma árvore de diretórios
-$rm -rf	<nome da pasta ou arquivo> 	Remove uma pasta ou arquivo
-    -i					Pergunta antes de remover
+$rm -rf	<nome da pasta ou arquivo>	Remove uma pasta ou arquivo
+    -i			Pergunta antes de remover
+    -f          Não pergunta antes de remover (f=force)
 $rmdir <nome do diretório>	Remove somente diretórios vazios
 $cp <origem> <destino>	Executa uma cópia de um arquivo
+    -r			Para cópia de diretórios (r=recursive).
 
 $scp <arquivo> <usuário_destino>@<IP destino>:<caminho destino> 
 			Transfere arquivo via ssh.			
@@ -66,7 +71,6 @@ ou
 $ssh <usuário>@<domínio>   
 
 $mv arq1.txt arq2.txt	Cria uma cópia de arq1.txt como arq2.txt no mesmo diretório
-    -r			Para cópia de diretírios.
 
 $mv <origem> <destino>	Move de um arquivo ou diretório
 $mv arq1.txt arq2.txt	Renomeia arq1.txt para arq2.txt 
@@ -95,7 +99,7 @@ Executa a montagem do dispositivo ou partição
 $lprm -		Esse é o comando mais conhecido e que limpa a fila de impressão de uma vez só, sem 			lhe dar opção de escolher o que deletar.
 $lpq -a		Serve para mostrar os trabalhos em todas as filas de impressão do sistema.
 $lpstat -p -d	Mostra os nomes das impressoras e a impressora padrão (ativa)
-$lp <opções> <entrada> 	Imprime na impressora padrão. O campo entrada pode ser um arquivo ou a saída de 
+$lp <opções> <entrada>	Imprime na impressora padrão. O campo entrada pode ser um arquivo ou a saída de 
 			outro comando com o concatenador "|"
 		<opções>:
 		-n 2	Imprime duas cópias
@@ -105,7 +109,7 @@ $dmesg | grep tty	Lista placas seriais conectadas podendo exibir mensagem de err
 			funcionamento perfeito.
 
 ************************************* ARQUIVO FSTAB ***********************************************
-OBS.: 	Editar o arquivo etc/fstab e inserir as linhas para montagem
+OBS.: Editar o arquivo etc/fstab e inserir as linhas para montagem
 	automática quando o Sist. Op. é iniciado, conforme abaixo:
 <caminho do dispositivo> <ponto de montagem> <tipo> <opção> <parâmetros de verificação integridade>
 /dev/sdb1	/mnt/hd_01	ext4	defauts		0	0
@@ -150,8 +154,9 @@ COMANDOS COMPLEMENTARES
    q    Sair
 --help	Ajuda do comando.
 $<nome do processo>&	Executa o processo em background
+
 *******************************************************************************************
-REDIRECIONAMENTO DE SAÍDA
+REDIRECIONAMENTO DE SAÍDA E OPERADORES
 >	Para redirecionar a saída de um comando para um arquivo (Sobrescreve se existir)
 >>	Para redirecionar a saída de um comando para um arquivo (Se existir adiciona
 	as linhas ao final)
@@ -159,6 +164,15 @@ REDIRECIONAMENTO DE SAÍDA
 <comando>|tee -a log.out	Redireciona a saída padrão para o arquivo log.out adicionando
 				uma nova linha após cada execução (-a) e ainda mostra
 				o resultado do comando na tela			
+;   Executa mais de um comando na mesma linha
+$<comando 1> ; <comando 2>
+&&  Executa mais de um comando na mesma linha, mas interrompe se houver erro
+$<comando 1> && <comando 2>
+||  Executa o segundo comando se o comando anterior gerar um erro
+$<comando 1> || <comando 2>
+|   Redireciona a saída de um comando para a entrada do próximo
+&   Executa o comando em background (deamon)
+$<comando> &
 
 ********************************************************************************************
 VARIÁVEIS DE AMBIMENTE
@@ -203,8 +217,8 @@ unzip <nome_no_arquivo.zip>		Descompacta o arquivo .zip
 
 ********************************************************************************************
 CONTROLE DE PROCESSOS
-$ps  [opções] 	Mostra os processos
-	-u	Mostra 	o usuário e consumo da CPU por processo
+$ps  [opções]	Mostra os processos
+	-u	Mostra	o usuário e consumo da CPU por processo
 	-x	Mostra todos os processos do usuário (incluindo  da interface gráfica)
 	-a	Mostra os processos de todos os usuários
 	-ef     Mostra todos os processos incluindo linhas de comando com argumentos
@@ -213,14 +227,18 @@ $pgrep <nome do processo>     Retorna o(s) PID(s) do processo
 $kill -l		      Lista o nome dos sinais
 $kill <PID do processo>	      Encerra um processo com a permissão do mesmo
 $kill -9 <PID do processo>    Encerra um processo de forma abrupta
+$kill %<ID do jobs>           Encerra um processo pelo ID  
 $pkill <nome do processo>     Encerra um processo com a permissão do mesmo
 $pkill -9 <nome do processo>  Encerra um processo de forma abrupta
 
-$jobs		Lista os processos parados pelo usuário (para parar um processo
-		usa-se CTRL^Z)
+Lista os processos parados pelo usuário ou em background retornando o ID 
+(para parar um processo usa-se CTRL^Z)
+$jobs		
 
-$fg <número do processo parado>		Retoma um processo parado, o número do
-					processo é retornado com o comando jobs.
+Retoma um processo parado, o número do processo é retornado com o comando jobs.
+(fg=foreground)
+$fg <número do processo parado>
+$fg %<ID do jobs>		
 
 GERENCIAMENTO DE SERVIÇOS (Servidor de e-mail, html, etc... )
 $systemd-analyze blame			Lista os tempos de inicialização dos Serviços
@@ -230,6 +248,7 @@ $systemctl enable <nome do serviço>	Inclui um serviço da inicialização do si
 $systemctl stop <nome do serviço>
 $systemctl start <nome do serviço>
 $systemctl restart <nome do serviço>
+
 ********************************************************************************************
 GERENCIAMENTO DO SISTEMA
 $uname -p	Mostra o processador da máquina
@@ -242,6 +261,7 @@ $sudo dpkg-reconfigure gdm
 lightdm - XFCE
 gdm - Gnome
 kdm - KDE
+
 ********************************************************************************************
 GERENCIAMENTO DE PACOTES
 Padrão Debian
@@ -284,16 +304,17 @@ yum ou dnf
 $yum update	Atualiza todos os pacotes
 $yum update <nome da aplicação>	Atualiza o pacote informado
 $yum upgrade	Atualiza todos os pacotes e remove os obsoletos	
-$yum install <nome do pacote> 	Instala o pacote do repositório
-$yum remove <nome do pacote> 	Remove o pacote
+$yum install <nome do pacote>	Instala o pacote do repositório
+$yum remove <nome do pacote>	Remove o pacote
+
 ********************************************************************************************
 GERENCIAMENTO DE USUÁRIOS
-$su		Troca para o usuário root (digitando a senha do root)(Antes definir a senha do 			root)
-$sudo su 	Troca para o usuário root (digitando a do usuário atual)(Para Ubunto)
+$su		Troca para o usuário root (digitando a senha do root)(Antes definir a senha do			root)
+$sudo su	Troca para o usuário root (digitando a do usuário atual)(Para Ubunto)
 $whoami		Qual o usuário que está logado?
 $useradd -m <nome do usuario>
-$userdel <nome do usuario> 	Remove o usuário 
-$userdel -r <nome do usuario> 	Remove o usuário e sua pasta home(-r)
+$userdel <nome do usuario>	Remove o usuário 
+$userdel -r <nome do usuario>	Remove o usuário e sua pasta home(-r)
 $usermod -c "<string>"  Modifica o comentário do usurário (etc/passwd)
 $usermod -s /bin/bash <nome usuário> Muda o shell padrão para o bash (bud do Ubuntu)
 $passwd <nome do usuario> Troca a senha do usuário (necessita estar como root)
@@ -343,12 +364,13 @@ $chown :<nome do grupo> <nome do arquivo>  Muda o grupo dono do arquivo
 ********************************************************************************************
 VERSIONADOR GITHUB (GIT)
 $git clone <link do github>	Faz o download do repositório Git
-$git add . 			Adiciona todos os arquivos alterados
+$git add .			Adiciona todos os arquivos alterados
 $git commit -m "<comentário>"	Adiciona o comentário da atualização
 $git push			Sobe os arquivos para o GitHub
 $git pull			Atualiza o repositório local com a versão mais nova
 				do repositório no git
 $git rm <nome do arquivo>	Remove o arquivo do repositório
+
 ********************************************************************************************
 
 										
