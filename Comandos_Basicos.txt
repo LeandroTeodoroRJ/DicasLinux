@@ -362,6 +362,11 @@ $chown <nome do usuário>:<nome do grupo> <nome do arquivo>  Muda o dono e o gru
 $chown :<nome do grupo> <nome do arquivo>  Muda o grupo dono do arquivo
 
 ********************************************************************************************
+CRIPTOGRAFIA COM GPG - GnuPG
+$gpg -c [nome_Do_Arquivo]	Para criptografar um arquivo
+$gpg [nome_Do_Arquivo]		Para descriptografar um arquivo
+
+********************************************************************************************
 VERSIONADOR GITHUB (GIT)
 $git clone <link do github>	Faz o download do repositório Git
 $git add .			Adiciona todos os arquivos alterados
