@@ -116,8 +116,14 @@ $lp <opções> <entrada>	Imprime na impressora padrão. O campo entrada pode ser
 		-n 2	Imprime duas cópias
 		-P 1,3	Imprime página 1 e 3
 		-d <nome da impressora>	Imprime em outra impressora
-$dmesg | grep tty	Lista placas seriais conectadas podendo exibir mensagem de erro ou
-			funcionamento perfeito.
+
+dmesg - Exibe os logs do Kernel
+Lista placas seriais conectadas podendo exibir mensagem de
+erro ou funcionamento perfeito.
+	$dmesg | grep tty
+Exibe os logs em tempo real.
+Útil para descobrir qual porta USB o dispositivo está conectado.
+	$sudo dmesg -w
 
 ************************************* ARQUIVO FSTAB ***********************************************
 OBS.: Editar o arquivo etc/fstab e inserir as linhas para montagem
