@@ -1,8 +1,8 @@
 **********************************************************************
-DICAS INICIAIS 
+DICAS INICIAIS
 1. Atalhos para o terminal shell: Crtl+Alt+T
 2. Atalho para troca entre os terminais do Linux: Crtl+Alt+ (F1 ao F7) onde
-o F7 é a interface gráfica e F1 ao F6 os terminais do shell. 
+o F7 é a interface gráfica e F1 ao F6 os terminais do shell.
 3. Ctrl+C aborta o comando atual na linha
 4. No Shell a formatação é <nome usuário>@<nome máquina>:<diretório atual>$
 5. O caractere "~" representa o diretório Home do usuário
@@ -16,7 +16,7 @@ o F7 é a interface gráfica e F1 ao F6 os terminais do shell.
 ********************************************************************
 COMANDOS DE MANUPULAÇÃO INTERNA DE ARQUIVOS
 $cat <arquivo texto>	Mostra o conteúdo do arquivo de texto
-$tail -f <arquivo texto>  Mostra as últimas dez linhas do arquivo e 
+$tail -f <arquivo texto>  Mostra as últimas dez linhas do arquivo e
 			  permanece com o arquivo aberto monitorando.
 			  Muito utilizado em arquivos de logs.
 $grep "<string>" *txt	Procura em todos os arquivos txt no diretório atual
@@ -24,19 +24,19 @@ $grep "<string>" *txt	Procura em todos os arquivos txt no diretório atual
 	-v <string>	Mostra tudo, menos a string (lógica invertida)
 $cut -d"<caractere delimitador>" -f<número da coluna>  Corta uma coluna
 	$cut -d" " -f2	Corta a segunda coluna com o espaço como delimitador.
-	$cut -d":" -f3,4  Corta a terceira e quarta coluna.		
+	$cut -d":" -f3,4  Corta a terceira e quarta coluna.
 $sed		Deleta linhas da saída padrão (ShellScript Aula9)
-$diff <arquivo1> <arquivo2> Compara os dois arquivos e exibe mensagem se houver 
+$diff <arquivo1> <arquivo2> Compara os dois arquivos e exibe mensagem se houver
 		diferença entre eles.
 	$diff -r <diretório1> <diretório2> Para comparação de diretórios
 xargs
 Executa o comando a partir de uma lista de argumentos de entrada de forma recursiva.
-$<argumentos> | xargs <comando>					
-	$cat ./deletar.txt | xargs rm -rf	Remove todos os arquivos 
+$<argumentos> | xargs <comando>
+	$cat ./deletar.txt | xargs rm -rf	Remove todos os arquivos
 						contidos em deletar.txt
 
-********************************************************************************* 
-COMANDOS DE DISCO 
+*********************************************************************************
+COMANDOS DE DISCO
 $ls		Mostra os arquivos e pastas
 $ls -l		Mostra o conteúdo na forma de lista longa (l=long)
 $ls -h		Mostra o tamanho dos aquivos em Kb, Mb ou Gb
@@ -47,7 +47,7 @@ $ls -lah > /home/leandro/lista.txt	grava a listagem em um arquivo txt
 $tree -d L 2    Lista a árvore somente de diretórios em 2 níveis
 $find <diretório> <nome do arquivo ou diretório> Procura no disco
 	$find <diretório> -name <nome do arquivo> Procura arquivo no disco
-	$find <sintaxe do find> -exec <comando> {} \; Executa um comando 
+	$find <sintaxe do find> -exec <comando> {} \; Executa um comando
 					para cada linha encontrada no find
 $cd <pasta>	Entra em uma pasta
 $pwd		Mostra o caminho da pasta onde você está (ditetório atual)
@@ -63,20 +63,31 @@ $rmdir <nome do diretório>	Remove somente diretórios vazios
 $cp <origem> <destino>	Executa uma cópia de um arquivo
     -r			Para cópia de diretórios (r=recursive).
 
-$scp <arquivo> <usuário_destino>@<IP destino>:<caminho destino> 
-			Transfere arquivo via ssh.			
+$scp <arquivo> <usuário_destino>@<IP destino>:<caminho destino>
+			Transfere arquivo via ssh.
 
-$ssh <usuário>@<IP>     Estabelece uma conexão SSH
-ou
-$ssh <usuário>@<domínio>   
+Estabelece uma conexão SSH
+$ssh <usuário>@<IP>
+$ssh <usuário><hostname>.local
+  	$ssh pi@raspberrypi.local
+$ssh <usuário>@<domínio>
 
 $mv arq1.txt arq2.txt	Cria uma cópia de arq1.txt como arq2.txt no mesmo diretório
 
 $mv <origem> <destino>	Move de um arquivo ou diretório
-$mv arq1.txt arq2.txt	Renomeia arq1.txt para arq2.txt 
-$scp <origem> <usuário>@<IP>:<destino>	Executa uma cópia de um arquivo na rede
+$mv arq1.txt arq2.txt	Renomeia arq1.txt para arq2.txt
+
+Executa uma cópia de um arquivo na rede
+$scp <origem> <usuário>@<IP>:<path destino>
 					habilitar o serviço ssh antes
 	$scp teste.txt root@192.168.1.100:/home/Leandro
+	Copia do computador remoto para a pasta atual (.)
+		$scp pi@raspberrypi.local:~/teste.txt .
+	Copia uma pasta (opção recursiva)
+		$scp -r [nome da pasta] [Parâmetro remoto]
+	Parâmetro remoto
+		[usuário@ip:path] ou [usuário@hostname.local:path]
+
 $whereis <comando>	Informa o diretório de localização do comando
 
 $ln -s <target file/directory> <Symbolic filename>	Cria um link simbólico
@@ -91,7 +102,7 @@ $mkfs.<tipo> <caminho>	Para escolher o padrão de alocação de dados
 	<tipo> = ntfs, xfs, ext4, etc...
 	$mkfs.ext4 dev/sdb1
 $df -h	Retorna lista dos dispositivos e partições montadas, assim como espaço utilizado e disponível.
-$mount	Retorna informação dos sistemas de arquivos montados	
+$mount	Retorna informação dos sistemas de arquivos montados
 $mount -t <tipo> <caminho do dispositivo> <caminho para montagem>
 Executa a montagem do dispositivo ou partição
 	$mount -t ext4 dev/sdb1 mnt/hd_01
@@ -99,7 +110,7 @@ Executa a montagem do dispositivo ou partição
 $lprm -		Esse é o comando mais conhecido e que limpa a fila de impressão de uma vez só, sem 			lhe dar opção de escolher o que deletar.
 $lpq -a		Serve para mostrar os trabalhos em todas as filas de impressão do sistema.
 $lpstat -p -d	Mostra os nomes das impressoras e a impressora padrão (ativa)
-$lp <opções> <entrada>	Imprime na impressora padrão. O campo entrada pode ser um arquivo ou a saída de 
+$lp <opções> <entrada>	Imprime na impressora padrão. O campo entrada pode ser um arquivo ou a saída de
 			outro comando com o concatenador "|"
 		<opções>:
 		-n 2	Imprime duas cópias
@@ -115,8 +126,8 @@ OBS.: Editar o arquivo etc/fstab e inserir as linhas para montagem
 /dev/sdb1	/mnt/hd_01	ext4	defauts		0	0
 
 1) O caminho do dispositivo pode ser substituído por seu ID utilizando o comando
-blkid. O blkid gera um código único para cada dispositivo (serial number), assim, 
-o dispositivo será montado na mesma pasta mesmo que seja conectado em outra porta 
+blkid. O blkid gera um código único para cada dispositivo (serial number), assim,
+o dispositivo será montado na mesma pasta mesmo que seja conectado em outra porta
 da placa mãe.
 #blkid <caminho do dispositivo>
 
@@ -138,7 +149,7 @@ Segunda coluna:
 
 $unmount <ponto de montagem>	Desmonta o disposito montado
 	$unmount mnt/hd_01
-$fsck.<tipo> <caminho do dispositivo>	Para verificação da unidade (antes é 
+$fsck.<tipo> <caminho do dispositivo>	Para verificação da unidade (antes é
 					necessário a desmontagem)
 	$fsck.ext4 /dev/sdb1
 $crontab	Agendador de tarefas
@@ -163,7 +174,7 @@ REDIRECIONAMENTO DE SAÍDA E OPERADORES
 2> ou 2>>  Faz a mesma coisa acima, porém direciona a saída de erro
 <comando>|tee -a log.out	Redireciona a saída padrão para o arquivo log.out adicionando
 				uma nova linha após cada execução (-a) e ainda mostra
-				o resultado do comando na tela			
+				o resultado do comando na tela
 ;   Executa mais de um comando na mesma linha
 $<comando 1> ; <comando 2>
 &&  Executa mais de um comando na mesma linha, mas interrompe se houver erro
@@ -189,7 +200,7 @@ echo $<variável>	Mostra o conteúdo de uma variável de ambiente
 CARACTERES CORINGA
 *			Substitui uma sequência de caracteres incluindo vazio
 ?			Substitui 1 caractere, vazio não incluso
-[char]			Substitui um caractere por uma sequência de caracteres que estiverem 
+[char]			Substitui um caractere por uma sequência de caracteres que estiverem
 			dentro dos colchetes
 [início-fim]		Substitui um caractere por um intervalo que estiver dentro dos colchetes
 {string,string,...}	Substitui uma sequência de caracteres pelas strings entre chaves.
@@ -197,7 +208,7 @@ CARACTERES CORINGA
 COMPACTAÇÃO DE ARQUIVOS
 Comando tar:
 -Agrupar
-tar cf <nome_do_arquivo.tar> <arquivos>	
+tar cf <nome_do_arquivo.tar> <arquivos>
 tar czf <nome_do_arquivo.tgz ou tar.gz> <arquivos>  Agrupa já compactando
 -Listar os arquivos compactados
 tar tf <nome_do_arquivo.tar>
@@ -227,18 +238,18 @@ $pgrep <nome do processo>     Retorna o(s) PID(s) do processo
 $kill -l		      Lista o nome dos sinais
 $kill <PID do processo>	      Encerra um processo com a permissão do mesmo
 $kill -9 <PID do processo>    Encerra um processo de forma abrupta
-$kill %<ID do jobs>           Encerra um processo pelo ID  
+$kill %<ID do jobs>           Encerra um processo pelo ID
 $pkill <nome do processo>     Encerra um processo com a permissão do mesmo
 $pkill -9 <nome do processo>  Encerra um processo de forma abrupta
 
-Lista os processos parados pelo usuário ou em background retornando o ID 
+Lista os processos parados pelo usuário ou em background retornando o ID
 (para parar um processo usa-se CTRL^Z)
-$jobs		
+$jobs
 
 Retoma um processo parado, o número do processo é retornado com o comando jobs.
 (fg=foreground)
 $fg <número do processo parado>
-$fg %<ID do jobs>		
+$fg %<ID do jobs>
 
 GERENCIAMENTO DE SERVIÇOS (Servidor de e-mail, html, etc... )
 $systemd-analyze blame			Lista os tempos de inicialização dos Serviços
@@ -278,16 +289,16 @@ $sudo apt-get install -f	Para resolver as dependências -f(fix)
 $sudo apt-get install -y	Instala sem perguntar
 
 Muda o gerenciador de seção (tela de login)
-$sudo dpkg-reconfigure <gerenciador de seção atual>	
+$sudo dpkg-reconfigure <gerenciador de seção atual>
    OBS: Para saber o gerenciador de seção atual veja o conteúdo do
 	arquivo /etc/X11/default-display-manager
 	Ex: $cat /etc/X11/default-display-manager
 	    /usr/sbin/gdm3
-	O gerenciador atual é o gdm3.	
-		
+	O gerenciador atual é o gdm3.
+
 
 $apt-get update		Atualiza a lista de reposiórios do apt-get
-$apt-get upgrade	Atualiza todos os pacotes instalados	
+$apt-get upgrade	Atualiza todos os pacotes instalados
 $apt-get upgrade <nome da aplicação>	Atualiza o pacote informado
 $apt-get remove <nome da aplicação>	Remove a aplicação
 
@@ -303,7 +314,7 @@ $rpm -evh <nome_do_pacote.deb> Remove completamente o pacote instalado
 yum ou dnf
 $yum update	Atualiza todos os pacotes
 $yum update <nome da aplicação>	Atualiza o pacote informado
-$yum upgrade	Atualiza todos os pacotes e remove os obsoletos	
+$yum upgrade	Atualiza todos os pacotes e remove os obsoletos
 $yum install <nome do pacote>	Instala o pacote do repositório
 $yum remove <nome do pacote>	Remove o pacote
 
@@ -313,7 +324,7 @@ $su		Troca para o usuário root (digitando a senha do root)(Antes definir a senh
 $sudo su	Troca para o usuário root (digitando a do usuário atual)(Para Ubunto)
 $whoami		Qual o usuário que está logado?
 $useradd -m <nome do usuario>
-$userdel <nome do usuario>	Remove o usuário 
+$userdel <nome do usuario>	Remove o usuário
 $userdel -r <nome do usuario>	Remove o usuário e sua pasta home(-r)
 $usermod -c "<string>"  Modifica o comentário do usurário (etc/passwd)
 $usermod -s /bin/bash <nome usuário> Muda o shell padrão para o bash (bud do Ubuntu)
@@ -336,7 +347,7 @@ u - user
 g - group
 o - other (outros)
 a - all
-Exemplo: 
+Exemplo:
 1.Colocar permissão de escrita para o grupo
 $chmod g+w <nome do arquivo>
 2.Remover permissão de leitura para outros usuários
@@ -352,9 +363,8 @@ chmod em opção de octal
 1 0 0 -> 4 -> apenas leitura
 1 0 1 -> 5 -> leitura e execução
 1 1 0 -> 6 -> leitura e escrita
-1 1 1 -> 7 -> leitura, execução e escrita 
+1 1 1 -> 7 -> leitura, execução e escrita
 Ex. chmod 755 <nome do arquivo/pasta>
-
 
 MUDANÇA DE DONO DO ARQUIVO
 $chown <nome do usuário> <nome do arquivo>  Muda o dono do arquivo
@@ -362,9 +372,22 @@ $chown <nome do usuário>:<nome do grupo> <nome do arquivo>  Muda o dono e o gru
 $chown :<nome do grupo> <nome do arquivo>  Muda o grupo dono do arquivo
 
 ********************************************************************************************
-CRIPTOGRAFIA COM GPG - GnuPG
+SEGURANÇA E CRIPTOGRAFIA
+GPG - GnuPG
 $gpg -c [nome_Do_Arquivo]	Para criptografar um arquivo
 $gpg [nome_Do_Arquivo]		Para descriptografar um arquivo
+
+Chaves SSH
+$ssh-keygen		Gera a chave pública e privada.
+$ssh-copy-id [username]@[ip]	Copia a chave para o dispositivo remoto.
+
+********************************************************************************************
+REDE
+Lista as portas abertas
+$netstat -tuln
+(State LISTEN são as portas que estão sendo monitoradas)
+
+$route -n	Informa os IPs dos roteadores ativos
 
 ********************************************************************************************
 VERSIONADOR GITHUB (GIT)
@@ -377,5 +400,3 @@ $git pull			Atualiza o repositório local com a versão mais nova
 $git rm <nome do arquivo>	Remove o arquivo do repositório
 
 ********************************************************************************************
-
-										
