@@ -1,4 +1,20 @@
-**********************************************************************
+
+
+
+                                                                 #####
+                                                                #######
+                   #                                            ##O#O##
+  ######          ###                                           #VVVVV#
+    ##             #                                          ##  VVV  ##
+    ##         ###    ### ####   ###    ###  ##### #####     #          ##
+    ##        #  ##    ###    ##  ##     ##    ##   ##      #            ##
+    ##       #   ##    ##     ##  ##     ##      ###        #            ###
+    ##          ###    ##     ##  ##     ##      ###       QQ#           ##Q
+    ##       # ###     ##     ##  ##     ##     ## ##    QQQQQQ#       #QQQQQQ
+    ##      ## ### #   ##     ##  ###   ###    ##   ##   QQQQQQQ#     #QQQQQQQ
+  ############  ###   ####   ####   #### ### ##### #####   QQQQQ#######QQQQQ
+
+******************************************************************************
 DICAS INICIAIS
 1. Atalhos para o terminal shell: Crtl+Alt+T
 2. Atalho para troca entre os terminais do Linux: Crtl+Alt+ (F1 ao F7) onde
@@ -13,7 +29,7 @@ o F7 é a interface gráfica e F1 ao F6 os terminais do shell.
 10. $man <comando>	help dos comandos (manual do comando)
 11. $clear	(Limpa a tela)
 
-********************************************************************
+******************************************************************************
 COMANDOS DE MANUPULAÇÃO INTERNA DE ARQUIVOS
 $cat <arquivo texto>	Mostra o conteúdo do arquivo de texto
 $tail -f <arquivo texto>  Mostra as últimas dez linhas do arquivo e
@@ -30,12 +46,13 @@ $diff <arquivo1> <arquivo2> Compara os dois arquivos e exibe mensagem se houver
 		diferença entre eles.
 	$diff -r <diretório1> <diretório2> Para comparação de diretórios
 xargs
-Executa o comando a partir de uma lista de argumentos de entrada de forma recursiva.
+Executa o comando a partir de uma lista de argumentos de entrada de
+forma recursiva.
 $<argumentos> | xargs <comando>
 	$cat ./deletar.txt | xargs rm -rf	Remove todos os arquivos
 						contidos em deletar.txt
 
-*********************************************************************************
+******************************************************************************
 COMANDOS DE DISCO
 $ls		Mostra os arquivos e pastas
 $ls -l		Mostra o conteúdo na forma de lista longa (l=long)
@@ -72,7 +89,8 @@ $ssh <usuário><hostname>.local
   	$ssh pi@raspberrypi.local
 $ssh <usuário>@<domínio>
 
-$mv arq1.txt arq2.txt	Cria uma cópia de arq1.txt como arq2.txt no mesmo diretório
+$mv arq1.txt arq2.txt	Cria uma cópia de arq1.txt como arq2.txt no
+                        mesmo diretório
 
 $mv <origem> <destino>	Move de um arquivo ou diretório
 $mv arq1.txt arq2.txt	Renomeia arq1.txt para arq2.txt
@@ -91,9 +109,10 @@ $scp <origem> <usuário>@<IP>:<path destino>
 $whereis <comando>	Informa o diretório de localização do comando
 
 $ln -s <target file/directory> <Symbolic filename>	Cria um link simbólico
-$ln -nsf <target file/directory> <Symbolic filename>	Edita um link simbólico já existente
+$ln -nsf <target file/directory> <Symbolic filename>	Edita um link simbólico
+                                                        já existente
 
-*********************************************************************
+******************************************************************************
 COMANDOS DE HARDWARE
 $lsusb		Lista os periféricos conectados a porta usb
 
@@ -101,17 +120,21 @@ $fdisk -l	Para mostrar as tabelas de formatação do disco
 $mkfs.<tipo> <caminho>	Para escolher o padrão de alocação de dados
 	<tipo> = ntfs, xfs, ext4, etc...
 	$mkfs.ext4 dev/sdb1
-$df -h	Retorna lista dos dispositivos e partições montadas, assim como espaço utilizado e disponível.
+$df -h	Retorna lista dos dispositivos e partições montadas, assim como
+        espaço utilizado e disponível.
 $mount	Retorna informação dos sistemas de arquivos montados
 $mount -t <tipo> <caminho do dispositivo> <caminho para montagem>
 Executa a montagem do dispositivo ou partição
 	$mount -t ext4 dev/sdb1 mnt/hd_01
 
-$lprm -		Esse é o comando mais conhecido e que limpa a fila de impressão de uma vez só, sem 			lhe dar opção de escolher o que deletar.
-$lpq -a		Serve para mostrar os trabalhos em todas as filas de impressão do sistema.
+$lprm -		Esse é o comando mais conhecido e que limpa a fila de impressão de
+            uma vez só, sem lhe dar opção de escolher o que deletar.
+$lpq -a		Serve para mostrar os trabalhos em todas as filas de impressão do
+            sistema.
 $lpstat -p -d	Mostra os nomes das impressoras e a impressora padrão (ativa)
-$lp <opções> <entrada>	Imprime na impressora padrão. O campo entrada pode ser um arquivo ou a saída de
-			outro comando com o concatenador "|"
+$lp <opções> <entrada>	Imprime na impressora padrão. O campo entrada pode ser
+                        um arquivo ou a saída de outro comando com o
+                        concatenador "|"
 		<opções>:
 		-n 2	Imprime duas cópias
 		-P 1,3	Imprime página 1 e 3
@@ -125,7 +148,7 @@ Exibe os logs em tempo real.
 Útil para descobrir qual porta USB o dispositivo está conectado.
 	$sudo dmesg -w
 
-************************************* ARQUIVO FSTAB ***********************************************
+**************************** ARQUIVO FSTAB ***********************************
 OBS.: Editar o arquivo etc/fstab e inserir as linhas para montagem
 	automática quando o Sist. Op. é iniciado, conforme abaixo:
 <caminho do dispositivo> <ponto de montagem> <tipo> <opção> <parâmetros de verificação integridade>
@@ -140,7 +163,8 @@ da placa mãe.
 2) <opção>
 defaults - padrão
 noexec - não dá permissão de execução de programas
-noatime - desabilita opção de atualização de data e hora de modificação do arquivo
+noatime - desabilita opção de atualização de data e hora de
+          modificação do arquivo
 É possivel concatenar separando por vírgula: noexec,noatime
 
 3) <parâmetros de verificação integridade>
@@ -151,7 +175,7 @@ Primeira coluna:
 Segunda coluna:
 0 - verificação de integridade desabilitada
 2 - verificação no boot
-***************************************************************************************************
+******************************************************************************
 
 $unmount <ponto de montagem>	Desmonta o disposito montado
 	$unmount mnt/hd_01
@@ -160,7 +184,7 @@ $fsck.<tipo> <caminho do dispositivo>	Para verificação da unidade (antes é
 	$fsck.ext4 /dev/sdb1
 $crontab	Agendador de tarefas
 
-********************************************************************************************
+******************************************************************************
 COMANDOS COMPLEMENTARES
 |more	Usado para paginar as telas de resultados
 |less	Usado para paginar as telas de resultados com mais opções de navegação
@@ -172,15 +196,16 @@ COMANDOS COMPLEMENTARES
 --help	Ajuda do comando.
 $<nome do processo>&	Executa o processo em background
 
-*******************************************************************************************
+******************************************************************************
 REDIRECIONAMENTO DE SAÍDA E OPERADORES
 >	Para redirecionar a saída de um comando para um arquivo (Sobrescreve se existir)
 >>	Para redirecionar a saída de um comando para um arquivo (Se existir adiciona
 	as linhas ao final)
 2> ou 2>>  Faz a mesma coisa acima, porém direciona a saída de erro
-<comando>|tee -a log.out	Redireciona a saída padrão para o arquivo log.out adicionando
-				uma nova linha após cada execução (-a) e ainda mostra
-				o resultado do comando na tela
+<comando>|tee -a log.out	Redireciona a saída padrão para o arquivo
+                            log.out adicionando uma nova linha após cada
+                            execução (-a) e ainda mostra o resultado do
+                            comando na tela.
 ;   Executa mais de um comando na mesma linha
 $<comando 1> ; <comando 2>
 &&  Executa mais de um comando na mesma linha, mas interrompe se houver erro
@@ -191,7 +216,7 @@ $<comando 1> || <comando 2>
 &   Executa o comando em background (deamon)
 $<comando> &
 
-********************************************************************************************
+******************************************************************************
 VARIÁVEIS DE AMBIMENTE
 $env		Mostra as variáveis da seção atual e de ambiente
 $set		Mostra todas as variáveis (local e exportadas)
@@ -202,15 +227,17 @@ PATH	Informa os diretórios onde estão os programas executados diretamente pelo
 $which <executável>	Procura se o executável está no path do sistema
 echo $<variável>	Mostra o conteúdo de uma variável de ambiente
 
-********************************************************************************************
+******************************************************************************
 CARACTERES CORINGA
 *			Substitui uma sequência de caracteres incluindo vazio
 ?			Substitui 1 caractere, vazio não incluso
-[char]			Substitui um caractere por uma sequência de caracteres que estiverem
-			dentro dos colchetes
-[início-fim]		Substitui um caractere por um intervalo que estiver dentro dos colchetes
-{string,string,...}	Substitui uma sequência de caracteres pelas strings entre chaves.
-********************************************************************************************
+[char]			Substitui um caractere por uma sequência de
+                caracteres que estiverem dentro dos colchetes
+[início-fim]		Substitui um caractere por um intervalo que estiver
+                    dentro dos colchetes
+{string,string,...}	 Substitui uma sequência de caracteres pelas strings
+                     entre chaves.
+******************************************************************************
 COMPACTAÇÃO DE ARQUIVOS
 Comando tar:
 -Agrupar
@@ -232,7 +259,7 @@ zip <nome_no_arquivo> -d <arquivos>	Deleta os arquivos contidos dentro do zip
 zip <nome_no_arquivo> -r <caminho da pasta>	Compacta uma pasta
 unzip <nome_no_arquivo.zip>		Descompacta o arquivo .zip
 
-********************************************************************************************
+******************************************************************************
 CONTROLE DE PROCESSOS
 $ps  [opções]	Mostra os processos
 	-u	Mostra	o usuário e consumo da CPU por processo
@@ -266,7 +293,7 @@ $systemctl stop <nome do serviço>
 $systemctl start <nome do serviço>
 $systemctl restart <nome do serviço>
 
-********************************************************************************************
+******************************************************************************
 GERENCIAMENTO DO SISTEMA
 $uname -p	Mostra o processador da máquina
 $reboot		Reinicia o computador
@@ -279,7 +306,7 @@ lightdm - XFCE
 gdm - Gnome
 kdm - KDE
 
-********************************************************************************************
+******************************************************************************
 GERENCIAMENTO DE PACOTES
 Padrão Debian
 $dpkg -l	Lista os pacotes instalados
@@ -311,7 +338,8 @@ $apt-get remove <nome da aplicação>	Remove a aplicação
 Padrão Red Hat
 $rpm -qa	Lista todos pacotes instalados
 $rpm -qa <nome do pacote> Lista se o pacote está instalado
-$rpm -qi <nome do pacote> Informações do pacote indicado (Verifica se o pacote está instalado)
+$rpm -qi <nome do pacote>   Informações do pacote indicado (Verifica se o
+                            pacote está instalado)
 $rpm -ivh <nome do pacote> Instala um pacote baixado
 $rpm -evh <nome_do_pacote.deb> Remove completamente o pacote instalado
      -v	  Verbose - Mostra detalhes do andamento
@@ -324,9 +352,10 @@ $yum upgrade	Atualiza todos os pacotes e remove os obsoletos
 $yum install <nome do pacote>	Instala o pacote do repositório
 $yum remove <nome do pacote>	Remove o pacote
 
-********************************************************************************************
+******************************************************************************
 GERENCIAMENTO DE USUÁRIOS
-$su		Troca para o usuário root (digitando a senha do root)(Antes definir a senha do			root)
+$su		Troca para o usuário root (digitando a senha do root)(Antes definir
+        a senha do root)
 $sudo su	Troca para o usuário root (digitando a do usuário atual)(Para Ubunto)
 $whoami		Qual o usuário que está logado?
 $useradd -m <nome do usuario>
@@ -374,10 +403,11 @@ Ex. chmod 755 <nome do arquivo/pasta>
 
 MUDANÇA DE DONO DO ARQUIVO
 $chown <nome do usuário> <nome do arquivo>  Muda o dono do arquivo
-$chown <nome do usuário>:<nome do grupo> <nome do arquivo>  Muda o dono e o grupo do arquivo
+$chown <nome do usuário>:<nome do grupo> <nome do arquivo>  Muda o dono e o
+                                                            grupo do arquivo
 $chown :<nome do grupo> <nome do arquivo>  Muda o grupo dono do arquivo
 
-********************************************************************************************
+******************************************************************************
 SEGURANÇA E CRIPTOGRAFIA
 GPG - GnuPG
 $gpg -c [nome_Do_Arquivo]	Para criptografar um arquivo
@@ -387,7 +417,7 @@ Chaves SSH
 $ssh-keygen		Gera a chave pública e privada.
 $ssh-copy-id [username]@[ip]	Copia a chave para o dispositivo remoto.
 
-********************************************************************************************
+******************************************************************************
 REDE
 Lista as portas abertas
 $netstat -tuln
@@ -395,7 +425,16 @@ $netstat -tuln
 
 $route -n	Informa os IPs dos roteadores ativos
 
-********************************************************************************************
+listar as redes wifi disponíveis
+$sudo su; nmcli device wifi rescan; nmcli device wifi list
+
+Para conectar a uma rede
+$nmcli device wifi connect "MyWiFiNetwork" password "SuperSecretPassword"
+
+Para descobrir seu IP e placas de rede instaladas
+$ifconfig
+
+******************************************************************************
 VERSIONADOR GITHUB (GIT)
 $git clone <link do github>	Faz o download do repositório Git
 $git add .			Adiciona todos os arquivos alterados
@@ -405,4 +444,4 @@ $git pull			Atualiza o repositório local com a versão mais nova
 				do repositório no git
 $git rm <nome do arquivo>	Remove o arquivo do repositório
 
-********************************************************************************************
+******************************************************************************
