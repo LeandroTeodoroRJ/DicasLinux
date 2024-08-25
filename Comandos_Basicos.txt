@@ -445,3 +445,19 @@ $git pull			Atualiza o repositório local com a versão mais nova
 $git rm <nome do arquivo>	Remove o arquivo do repositório
 
 ******************************************************************************
+PYTHON VIRTUAL MACHINE
+VENV
+python3 -m venv <NOME>      Criar uma virtual machine
+source /bin/deactivate      Ativar uma virtual machine
+deactivate                  Desativar uma virtual machine
+
+ANACONDA
+conda create --name <nome_do_ambiente>  Criar uma VM
+conda env list      Listar as virtual machines criadas
+conda deactivate    Destivar a VM
+conda activate <VM NAME>    Ativar uma virtual machine
+******************************************************************************
+VIRTUAL BOX TROUBLESHOOTING
+- Linux Mint 22 não escreve na pasta compartilhada.
+$sudo usermod -a -G vboxsf <YourUsername>
+Após reinicie a guest machine.
