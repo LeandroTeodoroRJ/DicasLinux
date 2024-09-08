@@ -114,8 +114,8 @@ $ln -nsf <target file/directory> <Symbolic filename>	Edita um link simbólico
 
 ******************************************************************************
 COMANDOS DE HARDWARE
-$lsusb		Lista os periféricos conectados a porta usb
-
+$lsusb		Lista os periféricos conectados a porta usb.
+$lsblk      Lista os dispositivos de armazenamento.
 $fdisk -l	Para mostrar as tabelas de formatação do disco
 $mkfs.<tipo> <caminho>	Para escolher o padrão de alocação de dados
 	<tipo> = ntfs, xfs, ext4, etc...
@@ -296,7 +296,8 @@ $systemctl restart <nome do serviço>
 ******************************************************************************
 GERENCIAMENTO DO SISTEMA
 $uname -p	Mostra o processador da máquina
-$reboot		Reinicia o computador
+$uname -r   Mostra a versão do kernel rodando
+$sudo reboot		Reinicia o computador
 $poweroff	Desliga o sistema operacional
 $shutdown <hora>	Desliga o sistema operacional na hora indicada
 
@@ -320,6 +321,8 @@ Instala um pacote baixado ".deb" e resolve as dependências caso ocorram
 $sudo dpkg -i <caminho ou nome do arquivo .deb>
 $sudo apt-get install -f	Para resolver as dependências -f(fix)
 $sudo apt-get install -y	Instala sem perguntar
+-- Para instalar uma versão específica de um pacote, exemplo:
+    sudo apt-get install vlc=3.0.16-1build7
 
 Muda o gerenciador de seção (tela de login)
 $sudo dpkg-reconfigure <gerenciador de seção atual>
